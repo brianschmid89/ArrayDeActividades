@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&family=Press+Start+2P&display=swap');
+
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+#divActividades {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 2%;
+}
+.tituloPrincipal {
+    font-size: 50px;
+}
+
+.h1Contacto,h1,h2,h3,h4,h5 {
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+p {
+    text-align: center;
+}
+
+img {
+    height: 200px;
+}
+
+.botonSaludo{
+    display: flex;
+    flex-direction: column;   
+}
+
+#enviarSaludo{
+    border-radius: 15px;
+    border-color: red;
+    background-color:black;
+    color: white;
+    font-size: 35px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.formularioNuevo{
+    margin-left: 25%;
+}

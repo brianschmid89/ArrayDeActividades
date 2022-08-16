@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactuando con HTML</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Actividades</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="carrito">
+                <a class="navbar-brand" href="#"><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </nav>
+        <h1 class="tituloPrincipal">BIENVENIDO A <strong>SPORTCLUB</strong> | SOMOS LA CADENA DE GIMNASIOS MAS GRANDE DEL PAIS.</h1>
+    </header>
+    <section id="compras">
+        <h2>Nuestras Actividades ↓↓↓</h2>
+        <div id="divActividades">
+
+        </div>
+        
+    </section>
+
+<!-- FORMULARIO DE RESERVAS -->    
+
+    <div class="row contactmain justify-content-center">
+      <p class="h1 h1Contacto tracking-in-expand mb-4">RESERVA TU LUGAR</p>
+  </div>
+  
+  <form class="col-md-6 formularioNuevo text-center border border-light p-5 shadow mb-5 rounded" action="#!">
+  
+      <!-- Nombre -->
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre">
+  
+      <!-- Email -->
+      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+      <!-- DNI -->
+      <input type="number" id="defaultContactFormDni" class="form-control mb-4" placeholder="N° de DNI">
+  
+      <!-- Desplegable -->
+      <label>Actividad a reservar</label>
+      <select class="browser-default custom-select mb-4">
+          <option value="" disabled>Seleccionar actividad</option>
+          <option value="1" selected>Crossfit</option>
+          <option value="2">Functional</option>
+          <option value="3">Spinning</option>
+          <option value="4">Musculación</option>
+      </select>
+  
+      <!-- Actividad -->
+      <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Horario"></textarea>
+          
+      </div>
+
+
+  
+      <!-- Constancia de turno -->
+      <div class="custom-control custom-checkbox mb-4">
+          <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+          <label class="custom-control-label" for="defaultContactFormCopy">Enviarme constancia de turno.</label>
+      </div>
+  
+      <!-- Boton reserva-->
+  
+      <div class="botonTurnos">
+          <input type="button" value="RESERVAR" id="btnDeTurnos" />
+      </div>
+  </form>
+  
+  <!-- Formulario de reserva -->
+
+    <div class="botonSaludo">
+      <input type="button" value="HACE CLICK ACA!" id="enviarSaludo" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
