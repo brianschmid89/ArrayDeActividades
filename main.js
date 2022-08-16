@@ -100,8 +100,8 @@ console.log(JSON.stringify(actividadesGimnasio));
 
 
 const mostrarActividad = (activity) => {
-  activity.forEach(actividad => {
-    div.innerHTML = `
+  actividadesGimnasio.forEach(actividad => {
+    seccionActividades.innerHTML += `
     <div class="card" style="width: 18rem;">
       <img src="${actividad.img}" class="card-img-top" alt=".">
       <div class="card-body">
