@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&family=Press+Start+2P&display=swap');
 
-/* *{
+*{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-} */
+}
+body{
+    background-size: auto;
+}
 
+.navbar{
+    width: 100%;
+}
+.logoAmarillo{
+    height: 50px;
+    border-radius: 75px
+}
 #divActividades {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     margin-bottom: 2%;
+}
+#navbarNav a{
+    font-family: 'Lexend Deca', sans-serif;
+    color: red;
+}
+#carrito {
+    font-family: 'Lexend Deca', sans-serif;
+    color: red;
+}
+#compras {
+    font-family: 'Lexend Deca', sans-serif;
 }
 .tituloPrincipal {
     font-size: 50px;
