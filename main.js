@@ -55,7 +55,7 @@ const contratarActividad = () => {
     2-Functional - $2000
     3-Spinning - $1800
     4-Gimnasio - $2300
-       `)
+    `)
   );
 
 const cantidad = Number(prompt(`Ingresa cuantos dias queres venir`));
@@ -63,26 +63,6 @@ const cantidad = Number(prompt(`Ingresa cuantos dias queres venir`));
   mostrarTotalActividades(cantidad);
   evaluarActividad(actividad, cantidad);
 };
-
-//ACTIVIDADES CON IMAGENES
-
-/* const mostrarActividad = () => {
-  
-  let contador = 0;
-  while (contador < cantidadDeactividades) {
-        
-    seccionActividades.innerHTML += (`
-        <div class="card" style="width: 18rem;">
-            <img src="./img/imagen${contador}.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Actividad${contador}</h5>
-            <a href="" class="btn btn-primary">Reserva</a>
-            </div>
-        </div>    
-        `);
-    contador++;
-  }
-};  */
 
 
 
@@ -136,30 +116,38 @@ btnEnviarConstancia.addEventListener("click", ()=> {
     "Email": emailSolicitante,
     "DNI": dniSolicitante
   }
+
   sessionStorage.setItem("datosSolicitante", JSON.stringify(datosSolicitante));
   Swal.fire({
     icon: 'success',
     title: 'Tus datos se registraron correctamente',
     text: 'En los siguientes minutos te llegara un mail',
     showConfirmButton: false,
+    confirmButtonColor: '#FFc107',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, reservar',
     timer: 3000
     
 })
+}).then((result) => {
+  if (result.isConfirmed){
+    Swal.fire(
+      'Clase reservada con éxito',
+    )
+    tr = document.querySelectorAll('tr');
+    activityArray = [];
+    seccionActividades.innerHTML = '';
+    mostrarActividad();
+  }
 })
 
-//RESERVA TURNOS
-/* const reservaTurno = () => {
-  for(let i = 0; i < btnTest.length; i++){
-    btnTest[i].addEventListener('click', function(e){
-      alert('Reservado. Gracias por elegirnos!')
-    })
-  }
-}
- */
+/* function btnEnviarConstancia ('click' () => {
+  if ((nombreSolicitante!='') && (emailSolicitante!='') && (dniSolicitante!=''))
+})   */
+
 
 mostrarActividad();
 contratarActividad();
-//reservaTurno();
 
 
 // ADD EVENTOS
