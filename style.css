@@ -7,9 +7,12 @@
 body{
     background-size: auto;
 }
-.buttonJSON{
+
+.divBotones{
     color: red;
-    background-color: black;
+    font-size: medium;
+    display: flex;
+    justify-content: space-evenly;
 }
 .navbar{
     width: 100%;

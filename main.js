@@ -87,7 +87,6 @@ const mostrarActividad = (activity) => {
       <div class="card-body">
       <h3 class="card-title">${actividad.nombre}</h3>
       <p class="card-text">Precio:$ ${actividad.precio}</p>
-      <button class="btn btn-primary" id=boton${actividad.id}> Reservar actividad</button>
       </div>
     </div>`
   })
@@ -107,38 +106,29 @@ console.log(JSON.stringify(activityArray));
 
 // STORAGE Y JSON
 
-btnEnviarConstancia.addEventListener("click", ()=> {
-  let nombreSolicitante = document.getElementById("defaultContactFormName").value;
-  let emailSolicitante = document.getElementById("defaultContactFormEmail").value;
-  let dniSolicitante = document.getElementById("defaultContactFormDni").value;
-  const datosSolicitante = {
-    "Nombre": nombreSolicitante,
-    "Email": emailSolicitante,
-    "DNI": dniSolicitante
-  }
 
-  sessionStorage.setItem("datosSolicitante", JSON.stringify(datosSolicitante));
-  Swal.fire({
-    icon: 'success',
-    title: 'Tus datos se registraron correctamente',
-    text: 'En los siguientes minutos te llegara un mail',
-    showConfirmButton: false,
-    confirmButtonColor: '#FFc107',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Si, reservar',
-    timer: 3000
-    
-})
-}).then((result) => {
-  if (result.isConfirmed){
-    Swal.fire(
-      'Clase reservada con éxito',
-    )
-    tr = document.querySelectorAll('tr');
-    activityArray = [];
-    seccionActividades.innerHTML = '';
-    mostrarActividad();
-  }
+let nombreSolicitante = document.getElementById("defaultContactFormName").value;
+let emailSolicitante = document.getElementById("defaultContactFormEmail").value;
+let dniSolicitante = document.getElementById("defaultContactFormDni").value;
+const datosSolicitante = {
+  "Nombre": nombreSolicitante,
+  "Email": emailSolicitante,
+  "DNI": dniSolicitante
+}
+
+btnEnviarConstancia.addEventListener("click", ()=> {
+  if ((nombreSolicitante!='') && (emailSolicitante!='') && (dniSolicitante!=''))
+    Swal.fire({
+      icon: 'success',
+      title: 'Tus datos se registraron correctamente',
+      text: 'En los siguientes minutos te llegara un mail',
+      showConfirmButton: false,
+      confirmButtonColor: '#FFc107',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, reservar',
+      timer: 3000 
+    }
+  )
 })
 
 mostrarActividad();
@@ -157,6 +147,22 @@ function cargarJSON() {
             console.log(data)
         })
     }
+
+    //verificacion de email
+
+async function verificarEmail(emailSolicitante){
+    let API = `https://www.disify.com/api/email/${emailSolicitante}`;
+    const response = await fetch(API);
+    const data = await response.json();
+    console.log(data);
+}
+
+const btnRegistrarse = document.querySelector('#button2')
+  
+btnRegistrarse.addEventListener("click", ()=> {
+    verificarEmail();
+})
+
 
 // ADD EVENTOS
 function saludar (){
