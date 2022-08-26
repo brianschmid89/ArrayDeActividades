@@ -141,14 +141,22 @@ btnEnviarConstancia.addEventListener("click", ()=> {
   }
 })
 
-/* function btnEnviarConstancia ('click' () => {
-  if ((nombreSolicitante!='') && (emailSolicitante!='') && (dniSolicitante!=''))
-})   */
-
-
 mostrarActividad();
 contratarActividad();
 
+
+//FETCH 
+const jsonButton =document.querySelector('#jsonBtn');
+
+jsonBtn.addEventListener('click', cargarJSON)
+
+function cargarJSON() {
+    fetch('data.json')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+        })
+    }
 
 // ADD EVENTOS
 function saludar (){
