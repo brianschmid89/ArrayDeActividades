@@ -2,7 +2,7 @@ const seccionActividades = document.getElementById("divActividades");
 const compras = document.getElementById("compras");
 const iconoCarrito = document.getElementById("carrito");
 const btnTest = document.getElementsByClassName('botonTurnos');
-const btnEnviarConstancia = document.querySelector("#btnDeTurnos")
+const btnEnviarConstancia = document.getElementById("btnDeTurnos");
 const cantidadDeactividades = 4;
 
 const definirActividad = (mensaje, precio) => {
@@ -47,7 +47,7 @@ const mostrarTotalActividades = (cantidad) => {
   iconoCarrito.append(totalActividades);
 };
 
-const contratarActividad = () => {
+/* const contratarActividad = () => {
     const actividad = Number(
         prompt(`Bienvenido a SportClub. Que actividad te gustaria realizar?
 
@@ -63,7 +63,7 @@ const cantidad = Number(prompt(`Ingresa cuantos dias queres venir`));
   mostrarTotalActividades(cantidad);
   evaluarActividad(actividad, cantidad);
 };
-
+ */
 
 
 //ARRAY ACTIVIDADES 
@@ -88,9 +88,19 @@ const mostrarActividad = (activity) => {
       <h3 class="card-title">${actividad.nombre}</h3>
       <p class="card-text">Precio:$ ${actividad.precio}</p>
       </div>
+      <button class="btn btn-primary botonReserva" onclick="mostrarAlerta()" >Reserva ${actividad.nombre}</button>
     </div>`
   })
 };
+
+function mostrarAlerta(){ 
+  Swal.fire({
+    imageUrl: "./img/grilla.jpeg",
+    imageHeight: 700,
+    imageAlt: 'A tall image',
+    confirmButtonColor: '#0d6efd',
+  })
+}
 
 
 let nombreActividades = ["Crossfit", "Spinning", "Functional", "Gimnasio"];
@@ -107,36 +117,61 @@ console.log(JSON.stringify(activityArray));
 // STORAGE Y JSON
 
 
-let nombreSolicitante = document.getElementById("defaultContactFormName").value;
-let emailSolicitante = document.getElementById("defaultContactFormEmail").value;
-let dniSolicitante = document.getElementById("defaultContactFormDni").value;
+let nombreSolicitante = document.getElementById(defaultContactFormName.value);
+let emailSolicitante = document.getElementById(defaultContactFormEmail.value);
+let dniSolicitante = document.getElementById(defaultContactFormDni.value);
+
 const datosSolicitante = {
   "Nombre": nombreSolicitante,
   "Email": emailSolicitante,
-  "DNI": dniSolicitante
+  "DNI": dniSolicitante,
 }
 
-btnEnviarConstancia.addEventListener("click", ()=> {
-  if ((nombreSolicitante!='') && (emailSolicitante!='') && (dniSolicitante!=''))
+const validarCampos = () => {
+
+  let nombreSolicitante = document.getElementById("defaultContactFormName").value;
+  let emailSolicitante = document.getElementById("defaultContactFormEmail").value;
+  let dniSolicitante = document.getElementById("defaultContactFormDni").value;
+
+  if ((nombreSolicitante.length != '') && (emailSolicitante.length != '') && (dniSolicitante.length != '')) {
     Swal.fire({
       icon: 'success',
       title: 'Tus datos se registraron correctamente',
-      text: 'En los siguientes minutos te llegara un mail',
+      text: 'Revisa tu correo electrónico',
       showConfirmButton: false,
       confirmButtonColor: '#FFc107',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, reservar',
-      timer: 3000 
+      timer: 3000
     }
-  )
+    )
+  }  
+  else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Tus datos son inválidos',
+      text: 'por favor revisa y volve a intentar',
+      showConfirmButton: false,
+      confirmButtonColor: '#FFc107',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, reservar',
+      timer: 3000
+    }
+    )
+  }
+}
+
+btnEnviarConstancia.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validarCampos();
 })
 
 mostrarActividad();
-contratarActividad();
-
+// contratarActividad();
 
 //FETCH 
-const jsonButton =document.querySelector('#jsonBtn');
+
+const jsonButton = document.querySelector('#jsonBtn');
 
 jsonBtn.addEventListener('click', cargarJSON)
 
@@ -148,24 +183,35 @@ function cargarJSON() {
         })
     }
 
-    //verificacion de email
-
-async function verificarEmail(emailSolicitante){
-    let API = `https://www.disify.com/api/email/${emailSolicitante}`;
-    const response = await fetch(API);
-    const data = await response.json();
-    console.log(data);
+//verificacion de email
+async function verificarEmail(emailSolicitante) {
+  let API = `https://www.disify.com/api/email/${emailSolicitante}`;
+  const response = await fetch(API);
+  const data = await response.json();
+  console.log(data);
 }
 
 const btnRegistrarse = document.querySelector('#button2')
-  
-btnRegistrarse.addEventListener("click", ()=> {
-    verificarEmail();
+
+btnRegistrarse.addEventListener("click", () => {
+  verificarEmail('test@gmail.com');
 })
 
+/* const btnRegistrarse = document.querySelector('#button2')
+  
+btnRegistrarse.addEventListener("click", ()=> {
+    verificarEmail()
+})
+
+async function verificarEmail(emailSolicitante){
+  let API = `https://www.disify.com/api/email/${emailSolicitante}`;
+  const response = await fetch(API);
+  const dataJSON = await response.json();
+  console.log(dataJSON);
+}; */
 
 // ADD EVENTOS
-function saludar (){
+function saludar() {
   alert('Seguinos en nuestras redes sociales!!!!')
 }
 

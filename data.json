@@ -1,30 +1,29 @@
 [
     { 
-    "id":0,
-    "nombre":"Crossfit", 
-    "img": "./img/imagen0.jpeg", 
-    "precio": 2000
-},
+        "id":0,
+        "nombre":"Crossfit", 
+        "img": "./img/imagen0.jpeg", 
+        "precio": 2000
+    },
     
     {
-    "id":1, 
-    "nombre":"Spinning", 
-    "img" :"./img/imagen1.jpeg", 
-    "precio": 2000
-},
+        "id":1, 
+        "nombre":"Spinning", 
+        "img" :"./img/imagen1.jpeg", 
+        "precio": 2000
+    },
     
     {
-    "id":2, 
-    "nombre": "Functional", 
-    "img" : "./img/imagen2.jpeg", 
-    "precio": 1800
-},
-    
+        "id":2, 
+        "nombre": "Functional", 
+        "img" : "./img/imagen2.jpeg", 
+        "precio": 1800
+    },
     { 
-    "id" :3, 
-    "nombre" : "Gimnasio", 
-    "img" :"./img/imagen3.jpeg", 
-    "precio": 2300
-}
+        "id" :3, 
+        "nombre" : "Gimnasio", 
+        "img" :"./img/imagen3.jpeg", 
+        "precio": 2300
+    }
 
 ]

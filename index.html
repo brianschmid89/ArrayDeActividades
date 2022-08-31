@@ -52,22 +52,25 @@
         
     </section>
 
-<!-- FORMULARIO DE RESERVAS -->    
 
-    <div class="row contactmain justify-content-center">
+<!-- FORMULARIO DE RESERVAS -->    
+<div class="linea-container col-md-12"> 
+  <hr/> 
+</div>
+  <div class="row contactmain justify-content-center">
       <p class="h1 h1Contacto tracking-in-expand mb-4">RESERVA TU LUGAR</p>
   </div>
   
-  <form class="col-md-6 formularioNuevo text-center border border-light p-5 shadow mb-5 rounded" action="#!">
+  <form class="col-md-6 formularioNuevo text-center border border-light p-5 shadow mb-5 rounded" id="btnDeTurnos" action="#!">
   
       <!-- Nombre -->
-      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre" required>
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre" >
   
       <!-- Email -->
-      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail" required>
+      <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail" >
 
       <!-- DNI -->
-      <input type="number" id="defaultContactFormDni" class="form-control mb-4" placeholder="N° de DNI" required>
+      <input type="number" id="defaultContactFormDni" class="form-control mb-4" placeholder="N° de DNI" >
   
       <!-- Desplegable -->
       <label>Actividad a reservar</label>
@@ -96,7 +99,7 @@
       <!-- Boton reserva-->
   
       <div class="botonTurnos">
-          <input type="button" value="RESERVAR" id="btnDeTurnos" />
+          <input type="submit" value="Reservar"/>
       </div>
   </form>
   
