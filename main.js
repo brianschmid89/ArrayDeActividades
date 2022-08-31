@@ -82,10 +82,10 @@ console.log(JSON.stringify(actividadesGimnasio));
 const mostrarActividad = (activity) => {
   actividadesGimnasio.forEach(actividad => {
     seccionActividades.innerHTML += `
-    <div class="card" style="width: 18rem;">
+    <div class="card col-md-3 justify-content-center border border-0" style="width: 18rem;">
       <img src="${actividad.img}" class="card-img-top" alt=".">
-      <div class="card-body">
-      <h3 class="card-title">${actividad.nombre}</h3>
+      <div class="card-body border">
+      <h3 class="card-title ">${actividad.nombre}</h3>
       <p class="card-text">Precio:$ ${actividad.precio}</p>
       </div>
       <button class="btn btn-primary botonReserva" onclick="mostrarAlerta()" >Reserva ${actividad.nombre}</button>
