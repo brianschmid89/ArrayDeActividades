@@ -183,11 +183,10 @@ async function verificarEmail(emailSolicitante) {
       let API = `https://www.disify.com/api/email/${emailSolicitante}`;
       const response = await fetch(API);
       const data = await response.json();
-  console.log(data);
+            console.log(data);
 }
 
 const btnRegistrarse = document.querySelector('#button2')
-
 btnRegistrarse.addEventListener("click", () => {
       verificarEmail('test@gmail.com');
 })
